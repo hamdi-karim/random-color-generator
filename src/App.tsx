@@ -27,6 +27,7 @@ function App() {
   const [primaryColor, setPrimaryColor] = useState<string>("");
   const [lastPrimaryColors, setLastPrimaryColors] = useState<string[]>([]);
 
+  // memoise creation of the Theme to re-render based on the primaryColor dependency
   const theme = useMemo(
     () =>
       createTheme({
@@ -41,8 +42,9 @@ function App() {
     [primaryColor]
   );
 
+  // generate new hexadecimal color only if the color has not been liked by the user
   const generateColorPalette = () => {
-    const newPalette = palettes.map((p) =>
+    const newPalettes = palettes.map((p) =>
       p.liked
         ? p
         : {
@@ -51,7 +53,7 @@ function App() {
           }
     );
 
-    setPalettes(newPalette);
+    setPalettes(newPalettes);
   };
 
   const handleLikeColor = (palette: Palette) => {
@@ -82,6 +84,7 @@ function App() {
       setPrimaryColor(color);
     }
 
+    // set only last 5 primary colors that the user had chosen
     if (!lastPrimaryColors.includes(color)) {
       setLastPrimaryColors([color, ...lastPrimaryColors.slice(0, 4)]);
     }
