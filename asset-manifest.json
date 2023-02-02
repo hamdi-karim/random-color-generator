@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/random-color-generator/static/js/main.90f45fa0.js",
+    "static/js/787.637e3034.chunk.js": "/random-color-generator/static/js/787.637e3034.chunk.js",
+    "index.html": "/random-color-generator/index.html",
+    "main.90f45fa0.js.map": "/random-color-generator/static/js/main.90f45fa0.js.map",
+    "787.637e3034.chunk.js.map": "/random-color-generator/static/js/787.637e3034.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.90f45fa0.js"
+  ]
+}
