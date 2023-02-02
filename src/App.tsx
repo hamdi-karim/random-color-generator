@@ -107,7 +107,7 @@ function App() {
                 width: "90%",
                 height: 40,
                 color: "primary.dark",
-                margin: "0.7rem",
+                margin: "0.8rem",
                 display: "flex",
                 justifyContent: "space-between",
               }}
