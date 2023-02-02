@@ -149,6 +149,8 @@ function App() {
             </Box>
           ))}
         </Grid>
+
+        {/* Generate Random Color Button */}
         <Grid item xs={12} md={12}>
           <Box display="flex" justifyContent="center" alignItems="center">
             <Button variant="text" onClick={generateColorPalette}>
@@ -156,8 +158,11 @@ function App() {
             </Button>
           </Box>
         </Grid>
+
         <Grid item xs={12} md={8}>
-          User History :{" "}
+          <Typography gutterBottom variant="h6" component="span">
+            {primaryColor && "User History :"}
+          </Typography>
           <ButtonGroup variant="text" aria-label="text button group">
             {lastPrimaryColors.map((color) => (
               <Button
@@ -181,6 +186,8 @@ function App() {
           </Typography>
         </Grid>
       </Grid>
+
+      {/* Footer */}
       <Paper
         sx={{
           position: "fixed",
