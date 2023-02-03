@@ -27,7 +27,7 @@ function App() {
   const [primaryColor, setPrimaryColor] = useState<string>("");
   const [lastPrimaryColors, setLastPrimaryColors] = useState<string[]>([]);
 
-  // memoise creation of the Theme to re-render based on the primaryColor dependency
+  // memoise creation of the Theme to optimize re-renders with the primaryColor dependency
   const theme = useMemo(
     () =>
       createTheme({
