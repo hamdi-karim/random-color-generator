@@ -1,19 +1,12 @@
 import { useEffect, useState, useMemo } from "react";
-import {
-  Box,
-  CssBaseline,
-  ButtonGroup,
-  Button,
-  Typography,
-  ThemeProvider,
-  Grid,
-  Paper,
-} from "@mui/material";
+import { Box, CssBaseline, Button, ThemeProvider, Grid } from "@mui/material";
 
 import { createTheme } from "@mui/material/styles";
 import { checkIfHexIsDark } from "./helpers/checkHexIsLightOrDark";
 import PaletteRow from "./components/PaletteRow";
 import { Palette } from "./helpers/types";
+import Footer from "./components/Footer";
+import UserHistory from "./components/UserHistory";
 
 function App() {
   const [palettes, setPalettes] = useState<Palette[]>([]);
@@ -117,50 +110,14 @@ function App() {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={8}>
-          <Typography gutterBottom variant="h6" component="span">
-            {primaryColor && "User History :"}
-          </Typography>
-          <ButtonGroup variant="text" aria-label="text button group">
-            {lastPrimaryColors.map((color) => (
-              <Button
-                key={color}
-                style={{ color }}
-                onClick={() => setAsPrimaryColor(color)}
-              >
-                {color}
-              </Button>
-            ))}
-          </ButtonGroup>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Typography
-            gutterBottom
-            variant="h6"
-            component="div"
-            sx={{ textAlign: "center" }}
-          >
-            {primaryColor && "Primary Color :"} {primaryColor}
-          </Typography>
-        </Grid>
+        <UserHistory
+          primaryColor={primaryColor}
+          lastPrimaryColors={lastPrimaryColors}
+          setAsPrimaryColor={setAsPrimaryColor}
+        />
       </Grid>
 
-      {/* Footer */}
-      <Paper
-        sx={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          textAlign: "center",
-        }}
-        elevation={3}
-        component="footer"
-      >
-        <Typography gutterBottom variant="h6" component="div">
-          {checkIfHexIsDark(primaryColor) ? "Dark" : "Light"} Mode
-        </Typography>
-      </Paper>
+      <Footer primaryColor={primaryColor} />
     </ThemeProvider>
   );
 }
