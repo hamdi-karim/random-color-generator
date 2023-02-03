@@ -6,21 +6,14 @@ import {
   Button,
   Typography,
   ThemeProvider,
-  Chip,
   Grid,
-  IconButton,
-  Tooltip,
   Paper,
 } from "@mui/material";
 
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-
 import { createTheme } from "@mui/material/styles";
 import { checkIfHexIsDark } from "./helpers/checkHexIsLightOrDark";
-interface Palette {
-  color: string;
-  liked: boolean;
-}
+import PaletteRow from "./components/PaletteRow";
+import { Palette } from "./helpers/types";
 
 function App() {
   const [palettes, setPalettes] = useState<Palette[]>([]);
@@ -105,51 +98,13 @@ function App() {
           }}
         >
           {palettes.map((palette) => (
-            <Box
-              sx={{
-                width: "90%",
-                height: 40,
-                color: "primary.dark",
-                margin: "0.7rem",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
+            <PaletteRow
               key={palette.color}
-            >
-              <Tooltip title="Like">
-                <IconButton
-                  aria-label="like"
-                  onClick={() => handleLikeColor(palette)}
-                >
-                  <FavoriteBorderIcon
-                    sx={{
-                      color: `${
-                        palette.liked
-                          ? "red"
-                          : checkIfHexIsDark(primaryColor)
-                          ? "white"
-                          : "black"
-                      }`,
-                    }}
-                  />
-                </IconButton>
-              </Tooltip>
-              <span>{palette.color}</span>
-              <Chip
-                label={`${palette.liked ? "LIKED" : ""}`}
-                style={{
-                  backgroundColor: palette.color,
-                  width: "30%",
-                  color: checkIfHexIsDark(primaryColor) ? "white" : "dark",
-                }}
-              />
-              <Button
-                variant="outlined"
-                onClick={() => setAsPrimaryColor(palette.color)}
-              >
-                Set As Primary Color
-              </Button>
-            </Box>
+              palette={palette}
+              primaryColor={primaryColor}
+              setAsPrimaryColor={setAsPrimaryColor}
+              handleLikeColor={handleLikeColor}
+            />
           ))}
         </Grid>
 
