@@ -104,7 +104,11 @@ function App() {
         {/* Generate Random Color Button */}
         <Grid item xs={12} md={12}>
           <Box display="flex" justifyContent="center" alignItems="center">
-            <Button variant="text" onClick={generateColorPalette}>
+            <Button
+              variant="text"
+              onClick={generateColorPalette}
+              data-cy="generateColorsButton"
+            >
               Generate Color Palette
             </Button>
           </Box>
