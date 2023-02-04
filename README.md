@@ -11,7 +11,12 @@
 - React - version 18.2
 - TypeScript - version 4.9
 - Material UI - version 5.11
-- Jest | React Testing Library => For writing and running unit tests
+- Jest | React Testing Library - unit tests
+- Cypress e2e tests - version 9.7.0
+
+# Cypress End To End Tests Simulation
+
+![colorGenerator_app spec ts](https://user-images.githubusercontent.com/34784654/216793350-8c1ac931-84f8-44f1-9ac0-26233f666190.gif)
 
 # Getting Started with Create React App
 
