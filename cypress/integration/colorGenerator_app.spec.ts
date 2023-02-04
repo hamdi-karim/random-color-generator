@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 /* eslint-disable testing-library/await-async-utils */
 describe("tests the homescreen of the color generator app", () => {
   beforeEach(() => {
