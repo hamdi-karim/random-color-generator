@@ -5,6 +5,10 @@
  * @returns {BOOLEAN} Boolean
  */
 function checkIfHexIsDark(hexcolor: string): boolean {
+  if (hexcolor.length !== 7) {
+    return false;
+  }
+
   const r: number = parseInt(hexcolor.slice(1, 3), 16);
   const g: number = parseInt(hexcolor.slice(3, 5), 16);
   const b: number = parseInt(hexcolor.slice(5, 7), 16);

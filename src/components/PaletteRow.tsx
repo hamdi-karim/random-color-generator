@@ -40,6 +40,7 @@ const PaletteRow: React.FC<PaletteRowProps> = ({
           <IconButton
             aria-label="like"
             onClick={() => handleLikeColor(palette)}
+            data-testid="likeButton"
           >
             <FavoriteBorderIcon
               sx={{
@@ -64,10 +65,12 @@ const PaletteRow: React.FC<PaletteRowProps> = ({
             width: "30%",
             color: checkIfHexIsDark(primaryColor) ? "white" : "dark",
           }}
+          data-testid="backgroundColor"
         />
         <Button
           variant="outlined"
           onClick={() => setAsPrimaryColor(palette.color)}
+          data-testid="setPrimaryButton"
         >
           Set As Primary Color
         </Button>
