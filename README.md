@@ -4,6 +4,8 @@
     based primary color set theme mode to light / dark .
 > Live demo [_here_](https://hamdi-karim.github.io/random-color-generator/).
 
+<img width="1512" alt="ColorGenerator screenshot" src="https://user-images.githubusercontent.com/34784654/216793105-06180e86-bb43-4b92-9d91-5daeb0c5451a.png">
+
 ## Technologies Used
 
 - React - version 18.2
